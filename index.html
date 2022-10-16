@@ -11,7 +11,24 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Karla:wght@800&display=swap" rel="stylesheet">
     </head>
     <body>
-        
+        <div class="container">
+            <p id="alert">password length is out of scope: 15 max</p>
+            <h1 id="name">Generate a <span id="highlight">random password</span></h1>
+            <h2 id="support-name">Never use an insecure password again.</h2>
+            <div class="gen-box">
+                <button id="generate-btn">Generate passwords</button>
+                <div class="len-input">
+                    <input type="text" id="passwordlen" value="5" maxlength="2" onfocus="this.value=''"><br>
+                </div>
+            </div>
+            
+            
+            <div id="line"></div>
+            <div class="password-display">
+                <p id="password1"></p>
+                <p id="password2"></p>
+            </div>
+        </div>
         <script src="./index.js"></script>
     </body>
 </html>
