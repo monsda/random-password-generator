@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://kit.fontawesome.com/d0db4818ad.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Karla:wght@800&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -18,7 +19,9 @@
             <div class="gen-box">
                 <button id="generate-btn">Generate passwords</button>
                 <div class="len-input">
-                    <input type="text" id="passwordlen" value="5" maxlength="2" onfocus="this.value=''"><br>
+                    <i id="plus-icon" class="fa-solid fa-circle-plus"></i>
+                    <input type="text" id="passwordlen" value="5" maxlength="2" onfocus="this.value=''">
+                    <i id="minus-icon" class="fa-solid fa-circle-minus"></i>
                 </div>
             </div>
             
