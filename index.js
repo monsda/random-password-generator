@@ -16,7 +16,7 @@ let timer;
 let value = 5;
 
 function continuosIncerment() {
-    if (value < 99) {
+    if (value < 20) {
         value++
         passwordLen.value = value
         timer = setTimeout(continuosIncerment, 100);
@@ -75,9 +75,35 @@ genPasswordBtn.addEventListener('click', () => {
         showAlert.style.display = "none";
         container[0].style.padding = "115px 52px 115px 52px"
         getPassword(passwordLen.value)
-    } else {
+        
+    } else if (parseInt(passwordLen.value) < 0){
+        showAlert.textContent = "password length must be positive"
+        showAlert.style.display = "block";
+        container[0].style.padding = "90px 52px 115px 52px"
+    } else if (parseInt(passwordLen.value) === 0) {
+        showAlert.textContent = "password length cannot be 0"
+        showAlert.style.display = "block";
+        container[0].style.padding = "90px 52px 115px 52px"
+    } else if (isNaN(passwordLen.value)){
+        showAlert.textContent = "password length should be number"
         showAlert.style.display = "block";
         container[0].style.padding = "90px 52px 115px 52px"
     }
 })
 
+const copyPasswordOne = async () => {
+    try {
+        await navigator.clipboard.writeText(passwordOne.textContent)
+        console.log('Content copied to clipboard:', passwordOne.textContent);
+    } catch {
+        console.error('fail to copy');
+    }
+}
+const copyPasswordTwo = async () => {
+    try {
+        await navigator.clipboard.writeText(passwordTwo.textContent)
+        console.log('Content copied to clipboard:', passwordTwo.textContent);
+    } catch {
+        console.error('fail to copy');
+    }
+}
