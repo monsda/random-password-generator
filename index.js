@@ -85,7 +85,11 @@ genPasswordBtn.addEventListener('click', () => {
         showAlert.style.display = "block";
         container[0].style.padding = "90px 52px 115px 52px"
     } else if (isNaN(passwordLen.value)){
-        showAlert.textContent = "password length should be number"
+        showAlert.textContent = "password length must be number"
+        showAlert.style.display = "block";
+        container[0].style.padding = "90px 52px 115px 52px"
+    } else if (parseInt(passwordLen.value) > 20) {
+        showAlert.textContent = "password length cannot exceeds 20"
         showAlert.style.display = "block";
         container[0].style.padding = "90px 52px 115px 52px"
     }
